@@ -1,40 +1,41 @@
 
 <div class="container-fluid">
-        <div class="row main">
-          <div class="col-md-2">
-            <!--Sidebar content-->
-      
-            <p>
-              Search: <input ng-model="query" />
-            </p>
-      
-            <p>
-              Sort by:
-              <select ng-model="orderProp">
-                <option value="name" ng-selected='true' >name</option>
-                <option value="age">age</option>
-              </select>
-            </p>
-      
-          </div>
-          <div class="col-md-10 main">
-            <!--Body content-->
-      
-            <ul class="phones">
-              <li class="phonelist" ng-repeat="phone in phones | filter:query | orderBy:orderProp">
-                <img  class="phone" ng-src="{{phone.imageUrl}}" alt="{{phone.name}}" />
-                <div>
-                    <a href="#!/phoneDetail/{{phone.id}}" >{{phone.name}}</a>
-                    <p>{{phone.snippet}}</p>
-                </div>
-              </li>
-            </ul>
-      
-            <!-- <ul>
-                <li ng-repeat="phone in phones">{{phone.name}}</li>
-            </ul> -->
-          </div>
+    <div class="row main">
+        <div class="col-md-2">
+        <!--Sidebar content-->
+
+        <p>
+            Search: <input ng-model="query" />
+        </p>
+
+        <p>
+            Sort by:
+            <select ng-model="orderProp">
+            <option value="name" ng-selected='true' >name</option>
+            <option value="age">age</option>
+            </select>
+        </p>
+
         </div>
-      </div>
+        <div class="col-md-10 main">
+        <!--Body content-->
+
+        <ul class="phones">
+            <li class="phonelist" ng-repeat="phone in phones | filter:query | orderBy:orderProp">
+            <img  class="phone" ng-src="{{phone.imageUrl}}" alt="{{phone.name}}" />
+            <div>
+                <a ui-sref="phoneDetail({id:phone.id})">{{phone.name}}</a>
+                <span>&nbsp;&nbsp;{{phone.age}}&nbsp;years ago</span>
+                <p>{{phone.snippet}}</p>
+            </div>
+            </li>
+        </ul>
+
+        <!-- <ul>
+            <li ng-repeat="phone in phones">{{phone.name}}</li>
+        </ul> -->
+        </div>
+    </div>
+</div>
       
 

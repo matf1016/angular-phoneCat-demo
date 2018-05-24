@@ -13,7 +13,8 @@
     });
 
     phoneListModel.controller('phoneListCrtl',['$scope', 'phoneData', function($scope, phoneData){
-        $scope.query = name;
+        $scope.query = '';
+        $scope.orderProp;
         phoneData.getPhones().then(function(response){
             $scope.phones = response.data;
         });

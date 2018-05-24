@@ -1,1 +1,116 @@
-<p>phonedetail</p>
+<div>
+    <div class="detail-container-top">
+        <img ng-src="{{detailData.images[0]}}" alt="{{detailData.name}}">
+        <div class="detail-info">
+            <h1>{{detailData.name}}</h1>
+            <hr>
+            <p>{{detailData.description}}</p>
+            <div class="detail-imgs">
+                <img ng-repeat="img in detailData.images" ng-src="{{detailData.images[$index]}}" alt="{{detailData.name}}" >
+            </div>
+        </div>
+    </div>
+    <div>
+        <ul class="other-info">
+            <li>
+                <span>Availability and Networks</span>
+                <dl>
+                <dt>Availability</dt>
+                <dd ng-repeat="availability in detailData.availability">{{availability}}</dd>
+                </dl>
+            </li>
+            <li>
+                <span>Battery</span>
+                <dl>
+                <dt>Type</dt>
+                <dd>{{detailData.battery.type}}</dd>
+                <dt>Talk Time</dt>
+                <dd>{{detailData.battery.talkTime}}</dd>
+                <dt>Standby time (max)</dt>
+                <dd>{{detailData.battery.standbyTime}}</dd>
+                </dl>
+            </li>
+            <li>
+                <span>Storage and Memory</span>
+                <dl>
+                <dt>RAM</dt>
+                <dd>{{detailData.storage.ram}}</dd>
+                <dt>Internal Storage</dt>
+                <dd>{{detailData.storage.flash}}</dd>
+                </dl>
+            </li>
+            <li>
+                <span>Connectivity</span>
+                <dl>
+                <dt>Network Support</dt>
+                <dd>{{detailData.connectivity.cell}}</dd>
+                <dt>WiFi</dt>
+                <dd>{{detailData.connectivity.wifi}}</dd>
+                <dt>Bluetooth</dt>
+                <dd>{{detailData.connectivity.bluetooth}}</dd>
+                <dt>Infrared</dt>
+                <dd>{{detailData.connectivity.infrared | checkmark}}</dd>
+                <dt>GPS</dt>
+                <dd>{{detailData.connectivity.gps | checkmark}}</dd>
+                </dl>
+            </li>
+            <li>
+                <span>Android</span>
+                <dl>
+                <dt>OS Version</dt>
+                <dd>{{detailData.android.os}}</dd>
+                <dt>UI</dt>
+                <dd>{{detailData.android.ui}}</dd>
+                </dl>
+            </li>
+            <li>
+                <span>Size and Weight</span>
+                <dl>
+                <dt>Dimensions</dt>
+                <dd ng-repeat="dim in detailData.sizeAndWeight.dimensions">{{dim}}</dd>
+                <dt>Weight</dt>
+                <dd>{{detailData.sizeAndWeight.weight}}</dd>
+                </dl>
+            </li>
+            <li>
+                <span>Display</span>
+                <dl>
+                <dt>Screen size</dt>
+                <dd>{{detailData.display.screenSize}}</dd>
+                <dt>Screen resolution</dt>
+                <dd>{{detailData.display.screenResolution}}</dd>
+                <dt>Touch screen</dt>
+                <dd>{{detailData.display.touchScreen | checkmark}}</dd>
+                </dl>
+            </li>
+            <li>
+                <span>Hardware</span>
+                <dl>
+                <dt>CPU</dt>
+                <dd>{{detailData.hardware.cpu}}</dd>
+                <dt>USB</dt>
+                <dd>{{detailData.hardware.usb}}</dd>
+                <dt>Audio / headphone jack</dt>
+                <dd>{{detailData.hardware.audioJack}}</dd>
+                <dt>FM Radio</dt>
+                <dd>{{detailData.hardware.fmRadio | checkmark}}</dd>
+                <dt>Accelerometer</dt>
+                <dd>{{detailData.hardware.accelerometer | checkmark}}</dd>
+                </dl>
+            </li>
+            <li>
+                <span>Camera</span>
+                <dl>
+                <dt>Primary</dt>
+                <dd>{{detailData.camera.primary}}</dd>
+                <dt>Features</dt>
+                <dd>{{detailData.camera.features.join(', ')}}</dd>
+                </dl>
+            </li>
+            <li>
+                <span>Additional Features</span>
+                <dd>{{detailData.additionalFeatures}}</dd>
+            </li>
+        </ul>
+    </div>
+</div>

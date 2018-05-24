@@ -1,7 +1,7 @@
  
 
 (function(angular){
-  var phoneCatApp = angular.module("phoneCatApp", ['ui.router', 'phoneList']);
+  var phoneCatApp = angular.module("phoneCatApp", ['ui.router', 'phoneList', 'phoneDetail', 'phoneFilters']);
 
   phoneCatApp.config(function($stateProvider, $urlRouterProvider) {
       $stateProvider
@@ -11,12 +11,13 @@
           controller: 'phoneListCrtl'
         })
         .state('phoneDetail', {
-              url: '/phoneDetail/:name',
+              url: '/phoneDetail/:id',
               templateUrl: 'modules/phoneDetail/phoneDetail.html',
-              controller:function($stateParams){
-                alert($stateParams.username)
-              }
+              controller:'phoneDetailCrtl'
         });
         $urlRouterProvider.when("", "/phoneList");
     });
+
+    
+    
 })(angular)

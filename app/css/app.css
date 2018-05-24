@@ -25,3 +25,34 @@ body{
     margin-left: 100px;
 }
 
+.detail-container-top{
+    height: 500px;
+    padding: 10px;
+}
+
+.detail-container-top img{
+    width: 480px;
+    height: 480px;
+    float: left;
+}
+
+.detail-info{
+    margin-left: 550px;
+}
+
+.detail-imgs img{
+    width: 100px;
+    height: 100px;
+}
+
+.other-info{
+    list-style: none;
+    padding: 20px;
+}
+
+.other-info li{
+    padding-right: 20px;
+    width:200px;
+    display: inline-block;
+    vertical-align: top;
+}
